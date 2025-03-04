@@ -88,3 +88,31 @@ Configure OSPF, EIGRP, ACLs, and VLANs using your Cisco vIOS router, NXOSv9k swi
     switchport trunk allowed vlan 10,20,30
 
 
+4. **Management IP Address:**
+    
+    ```bash
+    interface vlan 1
+    ip address 10.0.0.2 255.255.255.252
+    no shutdown
+    ```
+    
+
+---
+#### **Cisco vIOS Router:**
+
+1. **Subinterface Configuration for Inter-VLAN Routing:**
+    
+    ```bash
+    conf t
+    interface GigabitEthernet0/0.10
+    encapsulation dot1Q 10
+    ip address 192.168.10.1 255.255.255.0
+    
+    interface GigabitEtherne0/0.20
+    encapsulation dot1Q 20
+    ip address 192.168.20.1 255.255.255.0
+    
+    interface GigabitEthernet0/0.30
+    encapsulation dot1Q 30
+    ip address 192.168.30.1 255.255.255.0
+
