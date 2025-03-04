@@ -2,7 +2,7 @@
 Objective
 Configure OSPF, EIGRP, ACLs, and VLANs using your Cisco vIOS router, NXOSv9k switch, and 3 virtual PCs in EVE-NG.
 
- # 1. Topology 
+ # **1. Topology** 
  ## Overview:
 - **Cisco NXOS Switch**: Acts as a core switch with VLANs configured for segmentation.
 - **Cisco vIOS Router**: Provides routing between VLANs and runs both OSPF and EIGRP to demonstrate routing protocols.
@@ -12,7 +12,7 @@ Configure OSPF, EIGRP, ACLs, and VLANs using your Cisco vIOS router, NXOSv9k swi
   
 ![R S Topology 1](https://github.com/user-attachments/assets/f095af1b-15c4-4dc3-9bc7-712d750a5c70)
 
-# Tasks Objectives
+# **2. Tasks Objectives**
 
 1. **VLAN Configuration:**
     
@@ -31,7 +31,7 @@ Configure OSPF, EIGRP, ACLs, and VLANs using your Cisco vIOS router, NXOSv9k swi
     - Allow HTTP/HTTPS traffic while blocking other protocols.
 
 
-### **3. IP Addressing Scheme**
+# **3. IP Addressing Scheme**
 
 | **Device**            | **Interface**         | **IP Address** | **Subnet Mask** | **Purpose**               |
 | --------------------- | --------------------- | -------------- | --------------- | ------------------------- |
