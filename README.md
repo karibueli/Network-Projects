@@ -46,3 +46,45 @@ Configure OSPF, EIGRP, ACLs, and VLANs using your Cisco vIOS router, NXOSv9k swi
 | **vPC1**              | Ethernet0             | 192.168.10.10  | 255.255.255.0   | Device in VLAN 10         |
 | **vPC2**              | Ethernet0             | 192.168.20.10  | 255.255.255.0   | Device in VLAN 20         |
 | **vPC3**              | Ethernet0             | 192.168.30.10  | 255.255.255.0   | Device in VLAN 30         |
+
+
+# **4. Configuration Setup**
+
+#### **Cisco NXOS Switch:**
+
+1. **VLAN Configuration:**
+    
+    ```bash
+    conf t
+    vlan 10
+    name VLAN10
+    vlan 20
+    name VLAN20
+    vlan 30
+    name VLAN30
+    ```
+    
+2. **Interface Configuration:** Assign interfaces to VLANs for the PCs:
+    
+    ```bash
+    interface Ethernet1/1
+    switchport mode access
+    switchport access vlan 10
+    
+    interface Ethernet1/2
+    switchport mode access
+    switchport access vlan 20
+    
+    interface Ethernet1/3
+    switchport mode access
+    switchport access vlan 30
+    ```
+    
+3. **Router Connection (Trunk Port):**
+    
+    ```bash
+    interface Ethernet1/4
+    switchport mode trunk
+    switchport trunk allowed vlan 10,20,30
+
+
