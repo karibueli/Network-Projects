@@ -169,4 +169,4 @@ As screenshot below showing combination of PING Tests from vPC1, vPC2 & vPC3 acr
     ip access-group 100 out
 
 # **7. Additional Testing**
-  ## 1. Tracert & Traceroute (PC1 in VLAN10 to PC2 in VLAN20), Expected results traffic flow as normal
+   1. Tracert & Traceroute (PC1 in VLAN10 to PC2 in VLAN20), Expected results traffic flow as normal
