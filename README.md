@@ -94,8 +94,7 @@ Configure OSPF, EIGRP, ACLs, and VLANs using your Cisco vIOS router, NXOSv9k swi
     interface vlan 1
     ip address 10.0.0.2 255.255.255.252
     no shutdown
-    ```
-    
+    ```  
 
 ---
 #### **Cisco vIOS Router:**
@@ -115,4 +114,38 @@ Configure OSPF, EIGRP, ACLs, and VLANs using your Cisco vIOS router, NXOSv9k swi
     interface GigabitEthernet0/0.30
     encapsulation dot1Q 30
     ip address 192.168.30.1 255.255.255.0
+
+
+2. **Routing Configuration:**
+    
+    - Configure OSPF:
+        
+        ```bash
+        router ospf 1
+        network 192.168.10.0 0.0.0.255 area 0
+        network 192.168.20.0 0.0.0.255 area 0
+        ```
+        
+    - Configure EIGRP:
+        
+        ```bash
+        router eigrp 1
+        network 192.168.30.0
+        ```
+
+3. **Route Redistribution:**
+    
+    ```bash
+    router ospf 1
+    redistribute eigrp 1
+    
+    router eigrp 1
+    redistribute ospf 1 metric 1000 1 255 1 1500
+
+
+# **5. Connectivity & Protocol Test w/o security Restrictions**
+
+**The general test**
+
+As screenshot below showing combination of PING Tests from vPC1, vPC2 & vPC3 across VLAN 10,20&30 responded as required. Screenshot also indicated packet capture from wireshark on port E1/4 to test various protocols including OSPF, EIGRP and ICMP
 
