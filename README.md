@@ -150,3 +150,20 @@ Configure OSPF, EIGRP, ACLs, and VLANs using your Cisco vIOS router, NXOSv9k swi
 As screenshot below showing combination of PING Tests from vPC1, vPC2 & vPC3 across VLAN 10,20&30 responded as required. Screenshot also indicated packet capture from wireshark on port E1/4 to test various protocols including OSPF, EIGRP and ICMP
 
 ![Pasted image 20241212102308](https://github.com/user-attachments/assets/e68738dc-525b-41a1-a1e3-98ec26e73e7f)
+
+# **6. Basic Security Config**
+
+#### **Access Control Lists (ACLs):**
+
+1. **Block Traffic from VLAN 10 to VLAN 20:**
+    
+    ```bash
+    access-list 100 deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
+    access-list 100 permit ip any any
+    ```
+    
+2. **Apply ACL to Interface:**
+    
+    ```bash
+    interface GigabitEthernet1.10
+    ip access-group 100 out
